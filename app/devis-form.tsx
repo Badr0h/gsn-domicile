@@ -5,7 +5,7 @@ import { WHATSAPP } from "@/lib/contact";
 import { prestations } from "@/lib/prestations";
 
 const champ =
-  "h-12 w-full rounded-md border border-filet bg-papier px-3 text-base text-encre focus:border-tablier";
+  "h-12 w-full rounded-lg border border-sauge bg-creme-vert px-3.5 text-base text-encre focus:border-vert focus:bg-papier";
 
 export function DevisForm() {
   const [error, setError] = useState("");
@@ -35,17 +35,13 @@ export function DevisForm() {
   }
 
   return (
-    <form id="devis" onSubmit={onSubmit} noValidate className="grid gap-4">
-      <h2 className="font-serif text-3xl leading-tight">Demander un devis</h2>
-      <p className="text-mute">
-        La demande s’ouvre dans WhatsApp. Rien n’est enregistré sur ce site.
-      </p>
-      <label className="grid gap-1.5">
-        Nom
+    <form onSubmit={onSubmit} noValidate className="grid gap-4">
+      <label className="grid gap-1.5 text-sm font-medium text-mute">
+        Votre nom
         <input name="nom" type="text" autoComplete="name" className={champ} />
       </label>
-      <label className="grid gap-1.5">
-        Téléphone
+      <label className="grid gap-1.5 text-sm font-medium text-mute">
+        Votre téléphone
         <input
           name="telephone"
           type="tel"
@@ -54,8 +50,8 @@ export function DevisForm() {
           className={champ}
         />
       </label>
-      <label className="grid gap-1.5">
-        Prestation
+      <label className="grid gap-1.5 text-sm font-medium text-mute">
+        Prestation souhaitée
         <select
           name="prestation"
           defaultValue={prestations[0]}
@@ -69,16 +65,19 @@ export function DevisForm() {
         </select>
       </label>
       {error ? (
-        <p role="alert" className="font-semibold text-tablier">
+        <p role="alert" className="text-sm font-semibold text-vert">
           {error}
         </p>
       ) : null}
       <button
         type="submit"
-        className="inline-flex h-12 items-center justify-center rounded-md bg-tablier px-4 font-semibold text-papier"
+        className="inline-flex h-12 items-center justify-center rounded-lg bg-vert px-4 text-base font-semibold text-papier hover:bg-vert-fonce"
       >
         Demander un devis
       </button>
+      <p className="text-sm text-mute">
+        La demande s’ouvre dans WhatsApp. Rien n’est enregistré sur ce site.
+      </p>
     </form>
   );
 }

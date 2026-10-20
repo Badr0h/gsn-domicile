@@ -1,21 +1,21 @@
 import type { Metadata } from "next";
-import { Newsreader, Sora } from "next/font/google";
+import { Bricolage_Grotesque, Inter } from "next/font/google";
 import "./globals.css";
 
-const sora = Sora({
+const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
-  variable: "--font-sora",
+  variable: "--font-bricolage",
 });
 
-const newsreader = Newsreader({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-newsreader",
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
-  title: "GSN, service de ménage à Lyon",
+  title: "GSN — ménage et nettoyage à Lyon",
   description:
-    "Génie du Service et du Nettoyage. Nettoyage de locaux et de sols à Lyon et alentours. 254 rue Vendôme, 69003 Lyon.",
+    "Génie du Service et du Nettoyage. Nettoyage de locaux, de sols et entretien à Lyon. 254 rue Vendôme, 69003 Lyon. Devis sur WhatsApp.",
 };
 
 export default function RootLayout({
@@ -24,8 +24,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={`${sora.variable} ${newsreader.variable}`}>
-      <body className="font-sans">{children}</body>
+    <html lang="fr" className={`${bricolage.variable} ${inter.variable}`}>
+      <body className="font-sans antialiased">{children}</body>
     </html>
   );
 }
