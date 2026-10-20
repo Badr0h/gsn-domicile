@@ -2,9 +2,6 @@ import { DevisForm } from "@/app/devis-form";
 import { MAPS, PHONE_DISPLAY, PHONE_TEL } from "@/lib/contact";
 import { prestations } from "@/lib/prestations";
 
-const btnVert =
-  "inline-flex h-12 items-center justify-center rounded-lg bg-vert px-5 text-base font-semibold text-papier hover:bg-vert-fonce";
-
 function Wordmark() {
   return (
     <a href="#top" className="grid leading-none text-encre">
@@ -63,7 +60,10 @@ export default function Page() {
               89 avis sur Google
             </a>
           </div>
-          <a href="#devis" className={`${btnVert} w-full bg-papier text-vert-fonce hover:bg-sauge sm:w-fit`}>
+          <a
+            href="#devis"
+            className="inline-flex h-12 w-full items-center justify-center rounded-lg bg-papier px-5 text-base font-semibold text-vert-fonce hover:bg-papier sm:w-fit"
+          >
             Demander un devis
           </a>
         </div>
